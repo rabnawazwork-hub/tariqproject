@@ -8,47 +8,52 @@
 </head>
 
 <body>
+    <script src="products.js"></script>
     <script src="script.js"></script>
     <header>
         <img src="LOGO.png" class="logo" alt="Scentoria Logo">
         <nav>
             <a href="index.html">Home</a>
-            <a href="about.html">About</a>
             <a href="products.html">Products</a>
             <a href="services.html">Services</a>
             <a href="blog.html">Blogs</a>
-            <a href="contact.html">Contact</a>
-            <a href="feedback.html">Feedback</a>
+            <a href="about.html">About</a>
         </nav>
     </header>
-    <section>
+    <section class="products-section">
         <h1>Our Candle Collection</h1>
-        <table border="1">
-            <tr>
-                <th>Name</th>
-                <th>Scent</th>
-                <th>Price</th>
-            </tr>
-            <tr>
-                <td>Lavender Calm</td>
-                <td>Lavender</td>
-                <td>Rs. 1200</td>
-            </tr>
-            <tr>
-                <td>Vanilla Dream</td>
-                <td>Vanilla</td>
-                <td>Rs. 1100</td>
-            </tr>
-            <tr>
-                <td>Rose Blossom</td>
-                <td>Rose</td>
-                <td>Rs. 1300</td>
-            </tr>
-        </table>
+        <div class="product-grid" id="productGrid">
+            <!-- Products will be loaded here by JavaScript -->
+        </div>
     </section>
     <footer>
         <p> © 2025 Scentoria | All Rights Reserved</p>
     </footer>
+
+    <script>
+        // Load products when page loads
+        window.addEventListener('DOMContentLoaded', function () {
+            const productGrid = document.getElementById('productGrid');
+
+            products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.onclick = function () {
+                    window.location.href = 'product-detail.html?id=' + product.id;
+                };
+
+                productCard.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    <p class="scent">${product.scent}</p>
+                    <p class="price">Rs. ${product.price}</p>
+                    <button class="view-btn">View Details</button>
+                `;
+
+                productGrid.appendChild(productCard);
+            });
+        });
+    </script>
 </body>
 
 </html>

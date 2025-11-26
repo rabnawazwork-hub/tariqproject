@@ -1,7 +1,5 @@
-// Scentoria Website JavaScript
-// Simple code for 10th class project
 
-// Welcome message when page loads
+// Welcome message
 window.onload = function() {
     console.log("Welcome to Scentoria!");
 }
@@ -30,7 +28,7 @@ function showSocial(platform) {
     alert("Follow us on " + platform + "!\nComing soon...");
 }
 
-// Add click effect to featured products
+//click effect to featured products
 document.addEventListener('DOMContentLoaded', function() {
     // Get all featured product items
     var products = document.querySelectorAll('.featured li');
@@ -42,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Add animation to hero section
+    // animation to hero section
     var hero = document.querySelector('.hero');
     if (hero) {
         setTimeout(function() {
@@ -51,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Simple function to show current time in footer
+// show current time in footer
 function showTime() {
     var now = new Date();
     var time = now.getHours() + ":" + now.getMinutes();

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Product Details | Scentoria</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <script src="products.js"></script>
+    <script src="script.js"></script>
+    <header>
+        <img src="LOGO.png" class="logo" alt="Scentoria Logo">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About & Contact</a>
+            <a href="products.html">Products</a>
+            <a href="services.html">Services</a>
+            <a href="blog.html">Blogs</a>
+        </nav>
+    </header>
+
+    <section class="product-detail-section">
+        <div class="back-link">
+            <a href="products.html">← Back to Products</a>
+        </div>
+
+        <div class="product-detail-container" id="productDetail">
+            <!-- Product details will be loaded here by JavaScript -->
+        </div>
+    </section>
+
+    <footer>
+        <p> © 2025 Scentoria | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Get product ID from URL
+        function getProductId() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return parseInt(urlParams.get('id'));
+        }
+
+        // Find product by ID
+        function findProduct(id) {
+            return products.find(product => product.id === id);
+        }
+
+        // Load product details when page loads
+        window.addEventListener('DOMContentLoaded', function () {
+            const productId = getProductId();
+            const product = findProduct(productId);
+
+            if (!product) {
+                document.getElementById('productDetail').innerHTML = '<p>Product not found!</p>';
+                return;
+            }
+
+            // Display product details
+            const detailContainer = document.getElementById('productDetail');
+            detailContainer.innerHTML = `
+                <div class="product-detail-left">
+                    <img src="${product.image}" alt="${product.name}" class="main-product-image">
+                </div>
+                
+                <div class="product-detail-right">
+                    <h1>${product.name}</h1>
+                    <p class="product-scent">Scent: ${product.scent}</p>
+                    <p class="product-price">Rs. ${product.price}</p>
+                    <p class="product-description">${product.description}</p>
+                    
+                    <div class="product-details-accordion">
+                        <div class="detail-item">
+                            <button class="detail-header" onclick="toggleDetail(this)">
+                                <span>Scent Notes</span>
+                                <span class="arrow">▼</span>
+                            </button>
+                            <div class="detail-content">
+                                <p>${product.scentNotes.join(', ')}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <button class="detail-header" onclick="toggleDetail(this)">
+                                <span>Burn Time</span>
+                                <span class="arrow">▼</span>
+                            </button>
+                            <div class="detail-content">
+                                <p>${product.burnTime}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <button class="detail-header" onclick="toggleDetail(this)">
+                                <span>Which Wax is Used?</span>
+                                <span class="arrow">▼</span>
+                            </button>
+                            <div class="detail-content">
+                                <p>${product.waxType} - Natural, eco-friendly and clean burning</p>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <button class="detail-header" onclick="toggleDetail(this)">
+                                <span>Best Room to Put In</span>
+                                <span class="arrow">▼</span>
+                            </button>
+                            <div class="detail-content">
+                                <p>${product.bestRoom}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+
+        // Toggle accordion sections
+        function toggleDetail(button) {
+            const detailItem = button.parentElement;
+            const content = detailItem.querySelector('.detail-content');
+            const arrow = button.querySelector('.arrow');
+
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+                arrow.textContent = '▼';
+            } else {
+                content.style.display = 'block';
+                arrow.textContent = '▲';
+            }
+        }
+    </script>
+</body>
+
+</html>

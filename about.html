@@ -3,9 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>About | Scentoria</title>
+    <title>About & Contact | Scentoria</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
@@ -14,25 +13,99 @@
         <img src="LOGO.png" class="logo" alt="Scentoria Logo">
         <nav>
             <a href="index.html">Home</a>
-            <a href="about.html">About</a>
             <a href="products.html">Products</a>
             <a href="services.html">Services</a>
             <a href="blog.html">Blogs</a>
-            <a href="contact.html">Contact</a>
-            <a href="feedback.html">Feedback</a>
+            <a href="about.html">About</a>
         </nav>
     </header>
 
-    <section>
-        <h1>
-            About Scentoria
-        </h1>
-        <p>Scentoria began with the idea of bringing peace and comfort through fragrances.</p>
-        <h2>Our Mission</h2>
-        <p>To create relaxing and handcrafted scented candles for every mood.</p>
-        <h2>Our Vision</h2>
-        <p>To become a trusted fragrance brand known for purity, beauty and calmness.</p>
+    <!-- About Section -->
+    <section id="about-section">
+        <h1>About Scentoria</h1>
+        <p style="text-align: center;">Scentoria began with the idea of bringing peace and comfort through fragrances.</p>
+        <div class="about-grid">
+            <div class="about-card">
+                <h2>Our Mission</h2>
+                <p>To create relaxing and handcrafted scented candles for every mood.</p>
+            </div>
+            <div class="about-card">
+                <h2>Our Vision</h2>
+                <p>To become a trusted fragrance brand known for purity, beauty and calmness.</p>
+            </div>
+        </div>
     </section>
+
+    <!-- Contact Section -->
+    <section id="contact-section">
+        <h1>Contact Us</h1>
+        <div class="contact-info">
+            <div class="contact-card">
+                <h3>📧 Email</h3>
+                <p>support@scentoria.com</p>
+            </div>
+            <div class="contact-card">
+                <h3>📍 Address</h3>
+                <p>Multan, Pakistan</p>
+            </div>
+            <div class="contact-card">
+                <h3>📞 Phone</h3>
+                <p>+92 300 1234567</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feedback Section -->
+    <section id="feedback-section">
+        <h1>Customer Feedback Form</h1>
+        <form onsubmit="return validateForm()" method="get">
+            <fieldset>
+                <legend>Your Information</legend>
+                <label>Name:</label>
+                <input type="text" name="name" id="name" required>
+
+                <label>Email:</label>
+                <input type="email" name="email" id="email" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Service Rating</legend>
+                <label>Rate our Service:</label><br>
+                <div class="radio-group">
+                    <label><input type="radio" name="rate" value="excellent"> Excellent</label>
+                    <label><input type="radio" name="rate" value="good"> Good</label>
+                    <label><input type="radio" name="rate" value="average"> Average</label>
+                    <label><input type="radio" name="rate" value="poor"> Poor</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Service Used</legend>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="service" value="purchase"> Product Purchase</label>
+                    <label><input type="checkbox" name="service" value="delivery"> Delivery</label>
+                    <label><input type="checkbox" name="service" value="support"> Support</label>
+                    <label><input type="checkbox" name="service" value="other"> Other</label>
+                </div>
+            </fieldset>
+
+            <label>Feedback Type:</label>
+            <select name="feedback-type">
+                <option>Suggestion</option>
+                <option>Complaint</option>
+                <option>Appreciation</option>
+            </select>
+
+            <label>Comments:</label>
+            <textarea rows="5" name="comments" placeholder="Share your thoughts..."></textarea>
+
+            <div class="form-buttons">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </section>
+
     <footer>
         <p> © 2025 Scentoria | All Rights Reserved</p>
     </footer>
