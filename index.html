@@ -4,20 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Scentoria | Home</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shared/common.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
 </head>
 
 <body>
     <header>
-        <img src="LOGO.png" class="logo" alt="Scentoria Logo">
+        <img src="images/logo.png" class="logo" alt="Scentoria Logo">
         <nav>
             <a href="index.html">Home</a>
-            <a href="products.html">Products</a>
-            <a href="services.html">Services</a>
-            <a href="blog.html">Blogs</a>
-            <a href="about.html">About</a>
+            <a href="pages/products/products.html">Products</a>
+            <a href="pages/services/services.html">Services</a>
+            <a href="pages/blog/blog.html">Blogs</a>
+            <a href="pages/about/about.html">About</a>
         </nav>
+        <a href="pages/cart/cart.html" class="cart-icon">🛒</a>
     </header>
+
     <section class="hero">
         <h2>Light the Scent of Peace</h2>
         <p>Hand-poured scented candles for comfort, calmness and joy.</p>
@@ -25,32 +28,23 @@
 
     <section class="featured">
         <h2>Featured Products</h2>
-        <div class="product-grid" id="featuredGrid">
-            <!-- Featured products will be loaded here by JavaScript -->
-        </div>
+        <div class="product-grid" id="featuredGrid"></div>
     </section>
 
     <footer>
         <p> © 2025 Scentoria | All Rights Reserved</p>
     </footer>
 
-    <!-- Load products data first -->
-    <script src="products.js"></script>
-    <script src="script.js"></script>
-
-    <!-- Then run the code that uses it -->
+    <script src="shared/products.js"></script>
     <script>
-        // Load featured products (first 3 products)
         const featuredGrid = document.getElementById('featuredGrid');
-
-        // Get first 3 products as featured
         const featuredProducts = products.slice(0, 3);
 
         featuredProducts.forEach(product => {
             const productCard = document.createElement('div');
             productCard.className = 'product-card';
             productCard.onclick = function () {
-                window.location.href = 'product-detail.html?id=' + product.id;
+                window.location.href = 'pages/product-detail/product-detail.html?id=' + product.id;
             };
 
             productCard.innerHTML = `
@@ -64,6 +58,38 @@
             featuredGrid.appendChild(productCard);
         });
     </script>
+
+    <style>
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background-color: #EDE7DC;
+        }
+
+        .hero h2 {
+            font-size: 50px;
+            color: #3D2817;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #6B5D52;
+        }
+
+        .featured {
+            padding: 60px 20px;
+            text-align: center;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .featured h2 {
+            font-size: 40px;
+            color: #3D2817;
+            margin-bottom: 30px;
+        }
+    </style>
 </body>
 
 </html>

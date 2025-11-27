@@ -1,0 +1,137 @@
+/* Product Detail Page Styles */
+
+.product-detail-section {
+    padding: 30px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.back-link {
+    margin-bottom: 20px;
+}
+
+.back-link a {
+    color: brown;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}
+
+.product-detail-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.product-detail-left {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.main-product-image {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    border: 2px solid #EDE7DC;
+}
+
+.product-detail-right h1 {
+    color: #3D2817;
+    font-size: 36px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.product-scent {
+    color: brown;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.product-price {
+    color: #3D2817;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.product-description {
+    color: #6B5D52;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+.add-to-cart-btn {
+    background-color: brown;
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 20px 0;
+    transition: all 0.3s;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #3D2817;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product-details-accordion {
+    margin-top: 30px;
+}
+
+.detail-item {
+    border-bottom: 2px solid #EDE7DC;
+    margin-bottom: 10px;
+}
+
+.detail-header {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    padding: 15px 0;
+    text-align: left;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    color: #3D2817;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.detail-header .arrow {
+    font-size: 14px;
+    transition: transform 0.3s;
+}
+
+.detail-content {
+    display: none;
+    padding: 0 0 15px 0;
+    color: #6B5D52;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .product-detail-container {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .product-detail-right h1 {
+        font-size: 28px;
+    }
+}

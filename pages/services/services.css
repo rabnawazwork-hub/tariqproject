@@ -1,0 +1,96 @@
+/* Services Page Styles */
+
+.services-section {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.services-intro {
+    text-align: center;
+    font-size: 18px;
+    color: #6B5D52;
+    margin-bottom: 40px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.service-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid #EDE7DC;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    border-color: brown;
+}
+
+.service-icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.service-card h2 {
+    color: #3D2817;
+    font-size: 22px;
+    margin: 15px 0;
+}
+
+.service-card p {
+    color: #6B5D52;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.services-cta {
+    text-align: center;
+    margin-top: 60px;
+    padding: 40px 20px;
+    background-color: #EDE7DC;
+    border-radius: 10px;
+}
+
+.services-cta h2 {
+    color: #3D2817;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.services-cta p {
+    color: #6B5D52;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: brown;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #3D2817;
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}

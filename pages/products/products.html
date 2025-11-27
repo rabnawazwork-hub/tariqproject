@@ -4,34 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Products | Scentoria</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="../../images/logo.png">
+    <link rel="stylesheet" href="../../shared/common.css">
 </head>
 
 <body>
-    <script src="products.js"></script>
-    <script src="script.js"></script>
     <header>
-        <img src="LOGO.png" class="logo" alt="Scentoria Logo">
+        <img src="../../images/logo.png" class="logo" alt="Scentoria Logo">
         <nav>
-            <a href="index.html">Home</a>
-            <a href="products.html">Products</a>
-            <a href="services.html">Services</a>
-            <a href="blog.html">Blogs</a>
-            <a href="about.html">About</a>
+            <a href="../../index.html">Home</a>
+            <a href="../products/products.html">Products</a>
+            <a href="../services/services.html">Services</a>
+            <a href="../blog/blog.html">Blogs</a>
+            <a href="../about/about.html">About</a>
         </nav>
+        <a href="../cart/cart.html" class="cart-icon">🛒</a>
     </header>
+
     <section class="products-section">
         <h1>Our Candle Collection</h1>
-        <div class="product-grid" id="productGrid">
-            <!-- Products will be loaded here by JavaScript -->
-        </div>
+        <div class="product-grid" id="productGrid"></div>
     </section>
+
     <footer>
         <p> © 2025 Scentoria | All Rights Reserved</p>
     </footer>
 
+    <script src="../../shared/products.js"></script>
     <script>
-        // Load products when page loads
         window.addEventListener('DOMContentLoaded', function () {
             const productGrid = document.getElementById('productGrid');
 
@@ -39,11 +39,11 @@
                 const productCard = document.createElement('div');
                 productCard.className = 'product-card';
                 productCard.onclick = function () {
-                    window.location.href = 'product-detail.html?id=' + product.id;
+                    window.location.href = '../product-detail/product-detail.html?id=' + product.id;
                 };
 
                 productCard.innerHTML = `
-                    <img src="${product.image}" alt="${product.name}">
+                    <img src="../../${product.image}" alt="${product.name}">
                     <h3>${product.name}</h3>
                     <p class="scent">${product.scent}</p>
                     <p class="price">Rs. ${product.price}</p>
@@ -54,6 +54,14 @@
             });
         });
     </script>
+
+    <style>
+        .products-section {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+    </style>
 </body>
 
 </html>

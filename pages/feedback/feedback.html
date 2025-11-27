@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback | Scentoria</title>
+    <link rel="icon" type="image/png" href="../../images/logo.png">
+    <link rel="stylesheet" href="../../shared/common.css">
+    <link rel="stylesheet" href="feedback.css">
+</head>
+
+<body>
+    <header>
+        <img src="../../images/logo.png" class="logo" alt="Scentoria Logo">
+        <nav>
+            <a href="../../index.html">Home</a>
+            <a href="../products/products.html">Products</a>
+            <a href="../services/services.html">Services</a>
+            <a href="../blog/blog.html">Blogs</a>
+            <a href="../about/about.html">About</a>
+        </nav>
+        <a href="../cart/cart.html" class="cart-icon">🛒</a>
+    </header>
+
+    <section class="feedback-section">
+        <h1>We'd Love Your Feedback!</h1>
+        <p class="feedback-intro">Help us improve by sharing your thoughts and experiences</p>
+
+        <form class="simple-feedback-form" method="get">
+            <div class="form-group">
+                <label>Your Name *</label>
+                <input type="text" name="name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+                <label>Email Address *</label>
+                <input type="email" name="email" placeholder="your.email@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label>How would you rate our service? *</label>
+                <div class="rating-options">
+                    <label class="rating-label">
+                        <input type="radio" name="rating" value="excellent" required>
+                        <span>⭐⭐⭐⭐⭐ Excellent</span>
+                    </label>
+                    <label class="rating-label">
+                        <input type="radio" name="rating" value="good">
+                        <span>⭐⭐⭐⭐ Good</span>
+                    </label>
+                    <label class="rating-label">
+                        <input type="radio" name="rating" value="average">
+                        <span>⭐⭐⭐ Average</span>
+                    </label>
+                    <label class="rating-label">
+                        <input type="radio" name="rating" value="poor">
+                        <span>⭐⭐ Poor</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Feedback Type *</label>
+                <select name="feedback-type" required>
+                    <option value="">-- Select Type --</option>
+                    <option value="suggestion">💡 Suggestion</option>
+                    <option value="complaint">😟 Complaint</option>
+                    <option value="appreciation">❤️ Appreciation</option>
+                    <option value="question">❓ Question</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Your Comments *</label>
+                <textarea name="comments" rows="5" placeholder="Tell us what you think..." required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Which services did you use? (Optional)</label>
+                <div class="checkbox-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="service" value="purchase">
+                        <span>Product Purchase</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="service" value="delivery">
+                        <span>Delivery</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="service" value="support">
+                        <span>Customer Support</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="service" value="other">
+                        <span>Other</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-buttons-simple">
+                <button type="submit" class="btn-submit">Submit Feedback</button>
+                <button type="reset" class="btn-reset">Clear Form</button>
+            </div>
+        </form>
+    </section>
+
+    <footer>
+        <p> © 2025 Scentoria | All Rights Reserved</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+/* About & Contact Page Styles */
+
+#about-section {
+    background-color: #EDE7DC;
+    padding: 60px 20px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.about-card h2 {
+    color: brown;
+    margin-top: 0;
+}
+
+#contact-section {
+    padding: 60px 20px;
+    background-color: #F5F1E8;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.contact-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid #EDE7DC;
+    transition: transform 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card h3 {
+    color: #3D2817;
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.contact-card p {
+    color: brown;
+    font-weight: bold;
+    margin: 10px 0 0 0;
+}
+
+@media (max-width: 768px) {
+
+    .about-grid,
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+}
