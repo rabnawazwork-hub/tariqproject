@@ -1,30 +1,22 @@
-/* Feedback Page Styles */
-
-.feedback-section {
-    padding: 50px 20px;
-    max-width: 800px;
-    margin: auto;
-}
-
-.feedback-intro {
+.intro {
     text-align: center;
     font-size: 18px;
     color: #6B5D52;
     margin-bottom: 40px;
 }
 
-.simple-feedback-form {
+.form1 {
     background-color: white;
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
 }
 
-.form-group {
+.group {
     margin-bottom: 25px;
 }
 
-.form-group label {
+.group label {
     display: block;
     color: #3D2817;
     font-weight: bold;
@@ -32,10 +24,10 @@
     margin-bottom: 10px;
 }
 
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group select,
-.form-group textarea {
+.group input[type="text"],
+.group input[type="email"],
+.group select,
+.group textarea {
     width: 100%;
     padding: 12px 15px;
     border: 2px solid #EDE7DC;
@@ -45,20 +37,20 @@
     transition: border-color 0.3s;
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
+.group input:focus,
+.group select:focus,
+.group textarea:focus {
     outline: none;
     border-color: brown;
 }
 
-.rating-options {
+.options {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-.rating-label {
+.label1 {
     display: flex;
     align-items: center;
     padding: 12px 15px;
@@ -68,24 +60,24 @@
     transition: all 0.3s;
 }
 
-.rating-label:hover {
+.label1:hover {
     background-color: #EDE7DC;
     transform: translateX(5px);
 }
 
-.rating-label input {
+.label1 input {
     margin-right: 12px;
     width: 18px;
     height: 18px;
 }
 
-.checkbox-options {
+.checks {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 12px;
 }
 
-.checkbox-label {
+.label2 {
     display: flex;
     align-items: center;
     padding: 10px;
@@ -94,24 +86,24 @@
     cursor: pointer;
 }
 
-.checkbox-label:hover {
+.label2:hover {
     background-color: #EDE7DC;
 }
 
-.checkbox-label input {
+.label2 input {
     margin-right: 10px;
     width: 18px;
     height: 18px;
 }
 
-.form-buttons-simple {
+.btns {
     display: flex;
     gap: 15px;
     margin-top: 30px;
 }
 
-.btn-submit,
-.btn-reset {
+.btn1,
+.btn2 {
     flex: 1;
     padding: 15px 30px;
     border: none;
@@ -122,21 +114,21 @@
     transition: all 0.3s;
 }
 
-.btn-submit {
+.btn1 {
     background-color: brown;
     color: white;
 }
 
-.btn-submit:hover {
+.btn1:hover {
     background-color: #3D2817;
     transform: translateY(-2px);
 }
 
-.btn-reset {
+.btn2 {
     background-color: #EDE7DC;
     color: #3D2817;
 }
 
-.btn-reset:hover {
+.btn2:hover {
     background-color: #D5CFBE;
 }

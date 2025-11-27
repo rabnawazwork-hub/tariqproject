@@ -1,5 +1,3 @@
-/* Scentoria Common Styles */
-
 body {
     margin: 0;
     padding: 0;
@@ -31,7 +29,7 @@ nav a:hover {
     color: brown;
 }
 
-.cart-icon {
+.cart {
     font-size: 18px;
     text-decoration: none;
     transition: transform 0.3s;
@@ -40,7 +38,7 @@ nav a:hover {
     top: 15px;
 }
 
-.cart-icon:hover {
+.cart:hover {
     transform: scale(1.2);
 }
 
@@ -129,14 +127,14 @@ textarea {
     height: 100px;
 }
 
-.product-grid {
+.grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
     margin-top: 40px;
 }
 
-.product-card {
+.card {
     background-color: white;
     border-radius: 10px;
     padding: 20px;
@@ -146,12 +144,12 @@ textarea {
     border: 2px solid #EDE7DC;
 }
 
-.product-card:hover {
+.card:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.product-card img {
+.card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
@@ -159,26 +157,26 @@ textarea {
     margin-bottom: 15px;
 }
 
-.product-card h3 {
+.card h3 {
     color: #3D2817;
     font-size: 22px;
     margin: 10px 0;
 }
 
-.product-card .scent {
+.card .scent {
     color: brown;
     font-size: 16px;
     margin: 5px 0;
 }
 
-.product-card .price {
+.card .price {
     color: #3D2817;
     font-size: 20px;
     font-weight: bold;
     margin: 10px 0;
 }
 
-.product-card .view-btn {
+.card .btn {
     background-color: brown;
     color: white;
     padding: 10px 25px;
@@ -189,12 +187,12 @@ textarea {
     margin-top: 10px;
 }
 
-.product-card .view-btn:hover {
+.card .btn:hover {
     background-color: #3D2817;
 }
 
 @media (max-width: 768px) {
-    .product-grid {
+    .grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 20px;
     }
@@ -213,7 +211,7 @@ textarea {
         margin-right: 20px;
     }
 
-    .cart-icon {
+    .cart {
         top: 20px;
         right: 20px;
     }

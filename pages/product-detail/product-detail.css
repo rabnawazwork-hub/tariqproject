@@ -1,27 +1,25 @@
-/* Product Detail Page Styles */
-
-.product-detail-section {
+.section {
     padding: 30px 20px;
     max-width: 1200px;
     margin: auto;
 }
 
-.back-link {
+.link {
     margin-bottom: 20px;
 }
 
-.back-link a {
+.link a {
     color: brown;
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
 }
 
-.back-link a:hover {
+.link a:hover {
     text-decoration: underline;
 }
 
-.product-detail-container {
+.container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
@@ -30,47 +28,47 @@
     border-radius: 10px;
 }
 
-.product-detail-left {
+.left {
     display: flex;
     justify-content: center;
     align-items: flex-start;
 }
 
-.main-product-image {
+.img1 {
     width: 100%;
     max-width: 400px;
     border-radius: 10px;
     border: 2px solid #EDE7DC;
 }
 
-.product-detail-right h1 {
+.right h1 {
     color: #3D2817;
     font-size: 36px;
     margin-bottom: 15px;
     text-align: left;
 }
 
-.product-scent {
+.scent {
     color: brown;
     font-size: 18px;
     margin: 10px 0;
 }
 
-.product-price {
+.price {
     color: #3D2817;
     font-size: 28px;
     font-weight: bold;
     margin: 15px 0;
 }
 
-.product-description {
+.desc {
     color: #6B5D52;
     font-size: 16px;
     line-height: 1.6;
     margin: 20px 0;
 }
 
-.add-to-cart-btn {
+.btn1 {
     background-color: brown;
     color: white;
     padding: 15px 40px;
@@ -83,22 +81,22 @@
     transition: all 0.3s;
 }
 
-.add-to-cart-btn:hover {
+.btn1:hover {
     background-color: #3D2817;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.product-details-accordion {
+.details {
     margin-top: 30px;
 }
 
-.detail-item {
+.item {
     border-bottom: 2px solid #EDE7DC;
     margin-bottom: 10px;
 }
 
-.detail-header {
+.header {
     width: 100%;
     background-color: transparent;
     border: none;
@@ -113,12 +111,12 @@
     align-items: center;
 }
 
-.detail-header .arrow {
+.header .arrow {
     font-size: 14px;
     transition: transform 0.3s;
 }
 
-.detail-content {
+.content {
     display: none;
     padding: 0 0 15px 0;
     color: #6B5D52;
@@ -126,12 +124,12 @@
 }
 
 @media (max-width: 768px) {
-    .product-detail-container {
+    .container {
         grid-template-columns: 1fr;
         padding: 20px;
     }
 
-    .product-detail-right h1 {
+    .right h1 {
         font-size: 28px;
     }
 }

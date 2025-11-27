@@ -18,12 +18,12 @@
             <a href="../blog/blog.html">Blogs</a>
             <a href="../about/about.html">About</a>
         </nav>
-        <a href="../cart/cart.html" class="cart-icon">🛒</a>
+        <a href="../cart/cart.html" class="cart">🛒</a>
     </header>
 
-    <section class="products-section">
+    <section class="section">
         <h1>Our Candle Collection</h1>
-        <div class="product-grid" id="productGrid"></div>
+        <div class="grid" id="grid1"></div>
     </section>
 
     <footer>
@@ -33,30 +33,30 @@
     <script src="../../shared/products.js"></script>
     <script>
         window.addEventListener('DOMContentLoaded', function () {
-            const productGrid = document.getElementById('productGrid');
+            const grid1 = document.getElementById('grid1');
 
-            products.forEach(product => {
-                const productCard = document.createElement('div');
-                productCard.className = 'product-card';
-                productCard.onclick = function () {
-                    window.location.href = '../product-detail/product-detail.html?id=' + product.id;
+            items.forEach(item => {
+                const box = document.createElement('div');
+                box.className = 'card';
+                box.onclick = function () {
+                    window.location.href = '../product-detail/product-detail.html?id=' + item.id;
                 };
 
-                productCard.innerHTML = `
-                    <img src="../../${product.image}" alt="${product.name}">
-                    <h3>${product.name}</h3>
-                    <p class="scent">${product.scent}</p>
-                    <p class="price">Rs. ${product.price}</p>
-                    <button class="view-btn">View Details</button>
+                box.innerHTML = `
+                    <img src="../../${item.image}" alt="${item.name}">
+                    <h3>${item.name}</h3>
+                    <p class="scent">${item.scent}</p>
+                    <p class="price">Rs. ${item.price}</p>
+                    <button class="btn">View Details</button>
                 `;
 
-                productGrid.appendChild(productCard);
+                grid1.appendChild(box);
             });
         });
     </script>
 
     <style>
-        .products-section {
+        .section {
             padding: 50px 20px;
             max-width: 1200px;
             margin: auto;

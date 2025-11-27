@@ -1,109 +1,64 @@
-// Product Detail Page JavaScript
 
-function getProductId() {
-    const urlParams = new URLSearchParams(window.location.search);
-    return parseInt(urlParams.get('id'));
+function getId() {
+    const params = new URLSearchParams(window.location.search);
+    return parseInt(params.get('id'));
 }
 
-function findProduct(id) {
-    return products.find(product => product.id === id);
-}
+function showProduct() {
+    const id = getId();
+    const item = items.find(p => p.id === id);
 
-function addToCart(productId) {
-    const product = findProduct(productId);
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const existingItem = cart.find(item => item.id === productId);
-
-    if (existingItem) {
-        existingItem.quantity += 1;
-    } else {
-        cart.push({
-            id: product.id,
-            name: product.name,
-            price: product.price,
-            image: product.image,
-            quantity: 1
-        });
-    }
-
-    localStorage.setItem('cart', JSON.stringify(cart));
-    alert('✅ ' + product.name + ' added to cart!');
-}
-
-window.addEventListener('DOMContentLoaded', function () {
-    const productId = getProductId();
-    const product = findProduct(productId);
-
-    if (!product) {
-        document.getElementById('productDetail').innerHTML = '<p>Product not found!</p>';
+    if (!item) {
+        document.getElementById('box1').innerHTML = '<p>Product not found!</p>';
         return;
     }
 
-    const detailContainer = document.getElementById('productDetail');
-    detailContainer.innerHTML = `
-        <div class="product-detail-left">
-            <img src="../../${product.image}" alt="${product.name}" class="main-product-image">
+    const box1 = document.getElementById('box1');
+    box1.innerHTML = `
+        <div class="left">
+            <img src="../../${item.image}" alt="${item.name}" class="img1">
         </div>
-        
-        <div class="product-detail-right">
-            <h1>${product.name}</h1>
-            <p class="product-scent">Scent: ${product.scent}</p>
-            <p class="product-price">Rs. ${product.price}</p>
-            <p class="product-description">${product.description}</p>
+        <div class="right">
+            <h1>${item.name}</h1>
+            <p class="scent">${item.scent}</p>
+            <p class="price">Rs. ${item.price}</p>
+            <p class="desc">${item.description}</p>
+            <button class="btn1" onclick="add()">🛒 Add to Cart</button>
             
-            <button class="add-to-cart-btn" onclick="addToCart(${product.id})">
-                🛒 Add to Cart
-            </button>
-            
-            <div class="product-details-accordion">
-                <div class="detail-item">
-                    <button class="detail-header" onclick="toggleDetail(this)">
-                        <span>Scent Notes</span>
+            <div class="details">
+                <div class="item">
+                    <button class="header" onclick="toggle(this)">
+                        Product Details
                         <span class="arrow">▼</span>
                     </button>
-                    <div class="detail-content">
-                        <p>${product.scentNotes.join(', ')}</p>
+                    <div class="content">
+                        <p>Hand-poured soy wax candle</p>
+                        <p>Burn time: 40-45 hours</p>
+                        <p>Weight: 250g</p>
+                        <p>Made in Pakistan</p>
                     </div>
                 </div>
                 
-                <div class="detail-item">
-                    <button class="detail-header" onclick="toggleDetail(this)">
-                        <span>Burn Time</span>
+                <div class="item">
+                    <button class="header" onclick="toggle(this)">
+                        Care Instructions
                         <span class="arrow">▼</span>
                     </button>
-                    <div class="detail-content">
-                        <p>${product.burnTime}</p>
-                    </div>
-                </div>
-                
-                <div class="detail-item">
-                    <button class="detail-header" onclick="toggleDetail(this)">
-                        <span>Wax Type</span>
-                        <span class="arrow">▼</span>
-                    </button>
-                    <div class="detail-content">
-                        <p>${product.waxType} - Natural, eco-friendly and clean burning</p>
-                    </div>
-                </div>
-                
-                <div class="detail-item">
-                    <button class="detail-header" onclick="toggleDetail(this)">
-                        <span>Best Room</span>
-                        <span class="arrow">▼</span>
-                    </button>
-                    <div class="detail-content">
-                        <p>${product.bestRoom}</p>
+                    <div class="content">
+                        <p>Trim wick to 1/4 inch before each burn</p>
+                        <p>Burn for 2-4 hours at a time</p>
+                        <p>Keep away from drafts</p>
+                        <p>Never leave unattended</p>
                     </div>
                 </div>
             </div>
         </div>
     `;
-});
+}
 
-function toggleDetail(button) {
-    const detailItem = button.parentElement;
-    const content = detailItem.querySelector('.detail-content');
-    const arrow = button.querySelector('.arrow');
+function toggle(btn) {
+    const content = btn.nextElementSibling;
+    const arrow = btn.querySelector('.arrow');
 
     if (content.style.display === 'block') {
         content.style.display = 'none';
@@ -113,3 +68,31 @@ function toggleDetail(button) {
         arrow.textContent = '▲';
     }
 }
+
+function add() {
+    const id = getId();
+    const item = items.find(p => p.id === id);
+
+    if (!item) return;
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const existing = cart.find(i => i.id === id);
+
+    if (existing) {
+        existing.qty++;
+    } else {
+        cart.push({
+            id: item.id,
+            name: item.name,
+            price: item.price,
+            image: item.image,
+            qty: 1
+        });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert('Added to cart!');
+}
+
+window.addEventListener('DOMContentLoaded', showProduct);
